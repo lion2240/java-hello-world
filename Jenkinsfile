@@ -1,9 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
+    stage('Build') {
       steps {
         git(url: 'https://github.com/lion2240/java-hello-world.git', branch: 'master')
+        sh 'javac HelloWorld.java'
       }
     }
   }
